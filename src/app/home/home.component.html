@@ -1,0 +1,40 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab"  role="tab" aria-controls="home" aria-selected="true">Todos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab"  role="tab" aria-controls="profile" aria-selected="false">Nuevos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab"  role="tab" aria-controls="contact" aria-selected="false">En proceso</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">Estado</th>
+                              <th scope="col">Documento</th>
+                              <th scope="col">Autor</th>
+                              <th scope="col">Firmante</th>
+                              <th scope="col">Creado</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr  *ngFor="let documnto of data.documents">
+                              <td>{{documnto.status.name }}</td>
+                              <td>{{documnto.process }}</td>
+                              <td>{{documnto.user.name }}</td>
+                              <td>{{documnto.sign_requests.name }}</td>
+                              <td> {{ documnto.created_at | date}} </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>              
+                <div>
+                    {{ documnto }}
+                </div>
+        </div>
+    </div>
