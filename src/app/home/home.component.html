@@ -27,8 +27,12 @@
                               <td>{{documnto.status.name }}</td>
                               <td>{{documnto.process }}</td>
                               <td>{{documnto.user.name }}</td>
-                              <td>{{documnto.sign_requests.name }}</td>
-                              <td> {{ documnto.created_at | date}} </td>
+                              <td >
+                                <span *ngFor="let sign of documnto.sign_requests">
+                                    {{sign.name }}.
+                                </span>
+                              </td>
+                              <td > {{ documnto.created_at | date}} </td>
                             </tr>
                           </tbody>
                         </table>
